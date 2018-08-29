@@ -17,7 +17,7 @@ namespace RTEditor
     /// </remarks>
     public class MonoSingletonBase<T> : MonoBehaviour where T : MonoBehaviour
     {
-        #region Private Variables
+         
         /// <summary>
         /// We will use this to prevent our singleton instance from being accessed by
         /// more than one thread at a time (just in case multiple threads are running
@@ -29,9 +29,8 @@ namespace RTEditor
         /// Singleton instance.
         /// </summary>
         private static T _instance;
-        #endregion
-
-        #region Public Properties
+       
+     
         /// <summary>
         /// Returns the singleton instance.
         /// </summary>
@@ -79,6 +78,6 @@ namespace RTEditor
                 return _instance;
             }
         }
-        #endregion
+       
     }
 }
