@@ -37,6 +37,8 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
+        CameraCtrl.Instance.transform.position = transform.position;
+        CameraCtrl.Instance.AutoLookAt(transform.position);
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -77,6 +79,58 @@ public class PlayerMove : MonoBehaviour
         if (!m_CharacterController.isGrounded)
         {
             m_CharacterController.Move(transform.position + new Vector3(0, -1000, 0) - transform.position);
+        }
+
+        #region 摄像机位置
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    CameraCtrl.Instance.SetCameraRotate(0);
+        //}
+        //else if (Input.GetKey(KeyCode.D))
+        //{
+        //    CameraCtrl.Instance.SetCameraRotate(1);
+        //}
+        //else if (Input.GetKey(KeyCode.W))
+        //{
+        //    CameraCtrl.Instance.SetCameraUpAndDown(0);
+        //}
+        //else if (Input.GetKey(KeyCode.S))
+        //{
+        //    CameraCtrl.Instance.SetCameraUpAndDown(0);
+        //}
+        //else if (Input.GetKey(KeyCode.F))
+        //{
+        //    CameraCtrl.Instance.SetCameraZoom(1);
+        //}
+        //else if (Input.GetKey(KeyCode.N))
+        //{
+        //    CameraCtrl.Instance.SetCameraZoom(0);
+        //}
+        #endregion
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            CameraCtrl.Instance.SetCameraRotate(0);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            CameraCtrl.Instance.SetCameraRotate(1);
+        }
+        else if (Input.GetKey(KeyCode.W))
+        {
+            CameraCtrl.Instance.SetCameraUpAndDown(0);
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            CameraCtrl.Instance.SetCameraUpAndDown(1);
+        }
+        else if (Input.GetKey(KeyCode.I))
+        {
+            CameraCtrl.Instance.SetCameraZoom(0);
+        }
+        else if (Input.GetKey(KeyCode.L))
+        {
+            CameraCtrl.Instance.SetCameraZoom(1);
         }
 
     }
