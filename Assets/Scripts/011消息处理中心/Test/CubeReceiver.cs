@@ -1,9 +1,9 @@
 ﻿/*
- *		Description : 消息接收者
+ *		Description : 
  *
  *		CreatedBy : guoShuai
  *
- *		DataTime : 2018.09.06
+ *		DataTime : 2018.08
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -12,35 +12,25 @@ using UnityEngine.UI;
 
 namespace NotificationJunior
 {
-    public class Receiver : UIBase
+    public class CubeReceiver : CharacterBase
     {
-        [SerializeField]
-        private GameObject ima;
 
         private void Awake()
         {
-            BindMessage(UIEvent.OPEN_Panel2);
-            ima.SetActive(false);
+            BindMsg(CharacterEvent.CHANG_SCALE);
         }
-
 
         public override void ExcuteMessage(ushort EventCode, object message)
         {
             switch (EventCode)
             {
-                case UIEvent.OPEN_Panel2:
-                    ima.SetActive((bool)message);
+                case CharacterEvent.CHANG_SCALE:
+                    transform.localScale = Vector3.one * (float)message;
                     break;
                 default:
                     break;
             }
         }
-
-
-
-
-
-
 
     }
 }

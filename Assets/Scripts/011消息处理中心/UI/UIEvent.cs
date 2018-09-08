@@ -10,12 +10,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIEvent 
+namespace NotificationJunior
 {
+    public class UIEvent
+    {
 
-    public const ushort OPEN_Panel2 = 0;
+        public const ushort OPEN_Panel2 = 0;
 
 
 
-	 
+
+    }
 }

@@ -1,21 +1,22 @@
 ﻿/*
- *		Description : 基类
+ *		Description : 
  *
  *		CreatedBy : guoShuai
  *
- *		DataTime : 2018.09.06
+ *		DataTime : 2018.08
  */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 namespace NotificationJunior
 {
-    public abstract class MonoBase : MonoBehaviour
+    public class CharacterEvent
     {
 
-        public abstract void ExcuteMessage(ushort EventCode, object message);
+        public const ushort CHANG_SCALE = 0; // 改变大小
+
+
 
     }
 }

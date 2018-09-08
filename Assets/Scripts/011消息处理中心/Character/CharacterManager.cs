@@ -1,9 +1,9 @@
 ﻿/*
- *		Description : UI 模块管理器
+ *		Description : 
  *
  *		CreatedBy : guoShuai
  *
- *		DataTime : 2018.09.06
+ *		DataTime : 2018.08
  */
 using System.Collections;
 using System.Collections.Generic;
@@ -12,16 +12,15 @@ using UnityEngine.UI;
 
 namespace NotificationJunior
 {
-    public class UIManager : ManagerBase
+    public class CharacterManager : ManagerBase
     {
 
-        public static UIManager Instance;
+        public static CharacterManager Instance;
 
         private void Awake()
         {
             Instance = this;
         }
-
 
 
     }

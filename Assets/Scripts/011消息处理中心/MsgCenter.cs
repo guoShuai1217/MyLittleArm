@@ -15,48 +15,52 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MsgCenter : MonoBehaviour
+namespace NotificationJunior
 {
-    public static MsgCenter Instance;
-
-    private void Awake()
+    public class MsgCenter : MonoBehaviour
     {
-        Instance = this;
+        public static MsgCenter Instance;
 
-        // 加上需要的组件
-        gameObject.AddComponent<UIManager>();
-        DontDestroyOnLoad(gameObject);
-    }
-
-
-    /// <summary>
-    /// 发送消息 , 所有的发消息,都要通过这个方法
-    /// </summary>
-    /// <param name="areaCode">区域码</param>
-    /// <param name="eventCode">事件码</param>
-    /// <param name="message"> 传递的消息参数 </param>>
-    public void Dispatch(ushort areaCode, ushort eventCode, object message)
-    {
-        switch (areaCode)
+        private void Awake()
         {
-            case AreaCode.UI:
-                UIManager.Instance.ExcuteMessage(eventCode, message);
-                break;
-            case AreaCode.GAME:
-                break;
-            case AreaCode.CHARACTER:
-               // CharacterManager.Instance.Execute(eventCode, message);
-                break;
-            case AreaCode.AUDIO:
-               // AudioManager.Instance.Execute(eventCode, message);
-                break;
-            case AreaCode.NET:
-                break;
-            case AreaCode.SCENE:
-                break;
-            default:
-                break;
-        }
-    }
+            Instance = this;
 
+            // 加上需要的组件
+            gameObject.AddComponent<UIManager>();
+            gameObject.AddComponent<CharacterManager>();
+            DontDestroyOnLoad(gameObject);
+        }
+
+
+        /// <summary>
+        /// 发送消息 , 所有的发消息,都要通过这个方法
+        /// </summary>
+        /// <param name="areaCode">区域码</param>
+        /// <param name="eventCode">事件码</param>
+        /// <param name="message"> 传递的消息参数 </param>>
+        public void Dispatch(ushort areaCode, ushort eventCode, object message)
+        {
+            switch (areaCode)
+            {
+                case AreaCode.UI:
+                    UIManager.Instance.ExcuteMessage(eventCode, message);
+                    break;
+                case AreaCode.GAME:
+                    break;
+                case AreaCode.CHARACTER:
+                    CharacterManager.Instance.ExcuteMessage(eventCode, message);
+                    break;
+                case AreaCode.AUDIO:
+                    // AudioManager.Instance.ExcuteMessage(eventCode, message);
+                    break;
+                case AreaCode.NET:
+                    break;
+                case AreaCode.SCENE:
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
 }
