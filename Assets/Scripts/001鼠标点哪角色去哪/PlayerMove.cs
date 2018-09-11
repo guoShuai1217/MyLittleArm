@@ -82,39 +82,14 @@ public class PlayerMove : MonoBehaviour
         }
 
         #region 摄像机位置
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    CameraCtrl.Instance.SetCameraRotate(0);
-        //}
-        //else if (Input.GetKey(KeyCode.D))
-        //{
-        //    CameraCtrl.Instance.SetCameraRotate(1);
-        //}
-        //else if (Input.GetKey(KeyCode.W))
-        //{
-        //    CameraCtrl.Instance.SetCameraUpAndDown(0);
-        //}
-        //else if (Input.GetKey(KeyCode.S))
-        //{
-        //    CameraCtrl.Instance.SetCameraUpAndDown(0);
-        //}
-        //else if (Input.GetKey(KeyCode.F))
-        //{
-        //    CameraCtrl.Instance.SetCameraZoom(1);
-        //}
-        //else if (Input.GetKey(KeyCode.N))
-        //{
-        //    CameraCtrl.Instance.SetCameraZoom(0);
-        //}
-        #endregion
 
         if (Input.GetKey(KeyCode.A))
         {
-            CameraCtrl.Instance.SetCameraRotate(0);
+            CameraCtrl.Instance.SetCameraRotate(1);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            CameraCtrl.Instance.SetCameraRotate(1);
+            CameraCtrl.Instance.SetCameraRotate(0);
         }
         else if (Input.GetKey(KeyCode.W))
         {
@@ -132,6 +107,9 @@ public class PlayerMove : MonoBehaviour
         {
             CameraCtrl.Instance.SetCameraZoom(1);
         }
+        #endregion
+
+
 
     }
 

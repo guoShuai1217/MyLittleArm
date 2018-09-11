@@ -45,7 +45,7 @@ public class CameraCtrl : MonoBehaviour
     /// <summary>
     /// 设置摄像机旋转
     /// </summary>
-    /// <param name="type">0=左 1=右</param>
+    /// <param name="type">1=左 0=右</param>
     public void SetCameraRotate(int type)
     {
         transform.Rotate(0, 40 * Time.deltaTime * (type == 0 ? -1 : 1), 0);
